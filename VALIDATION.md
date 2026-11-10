@@ -20,4 +20,4 @@ Limits: MariaDB was exercised; this report does not claim PostgreSQL execution, 
 
 ## Package
 
-`mod_lumen10admissao-1.3.0.zip` — SHA-256 `464a2010239fe2beea2fea0bebfffe56d1b9c259b2ad2903e6bba19a6b305c17`.
+`mod_lumen10admissao-1.3.0.zip` — SHA-256 `0328c7bed20242d69abd3db4699e83764afa2262139ca22ae0dc077ebe974946`.

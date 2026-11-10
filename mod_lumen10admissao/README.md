@@ -51,6 +51,8 @@ Use a PHP version and extensions supported by your Moodle branch, including `fil
 4. Configure site settings under **Plugins → Activity modules → Lumen10 Admissions**. Check email delivery, scheduled cron, storage and the application privacy notice.
 5. No Composer/npm command, private key or manual SQL installation step is required by the distributed ZIP. Development source is included and AMD output is already built.
 
+For manual updates, use a clean component source directory from the new ZIP. This removes retired source files, including the old `form.js`. Use Moodle's plugin installer when possible; application data remains in the database and Moodledata.
+
 ## Setting up an application period
 
 1. Create or select a reception course inside the intended category. Add the Lumen10 Admissions activity.

@@ -38,6 +38,8 @@ O **Lumen10 Prontuário (`local_lumen10_prontuario`) é uma integração opciona
 
 O envio entra em análise. A Secretaria aprova, pede correção ou não aprova. O aluno confirma a aprovação pelo link recebido e recebe as instruções de acesso. Documentos não substituídos permanecem no pedido de correção. Matrícula nas disciplinas segue a decisão da instituição. E-mail na fila não equivale a entrega na caixa do destinatário; confira SMTP/cron.
 
+Na atualização manual, utilize uma pasta de fontes limpa do componente extraída do novo ZIP, removendo arquivos antigos que saíram da versão, incluindo `form.js`. Prefira o instalador nativo do Moodle. Os dados das inscrições ficam no banco e no Moodledata.
+
 ## Acessibilidade e deficiência visual
 
 Formulários com rótulos e validação nativa, navegação por teclado, foco visível, mensagens textuais, tabelas com cabeçalhos e diálogo identificado ajudam o uso com tecnologias assistivas. Ao fechar a visualização do documento, o foco volta ao controle de abertura. Uma pessoa de confiança pode ajudar no preenchimento.
