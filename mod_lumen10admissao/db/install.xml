@@ -1,0 +1,167 @@
+<?xml version='1.0' encoding='utf-8'?>
+<XMLDB PATH="mod/lumen10admissao/db" VERSION="20261109" COMMENT="Independent Lumen10 admissions">
+  <TABLES>
+    <TABLE NAME="lumen10admissao" COMMENT="Course applications isolated by class category and reception course">
+      <FIELDS>
+        <FIELD NAME="id" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="true" />
+        <FIELD NAME="course" TYPE="int" LENGTH="10" NOTNULL="true" />
+        <FIELD NAME="name" TYPE="char" LENGTH="255" NOTNULL="true" />
+        <FIELD NAME="intro" TYPE="text" NOTNULL="false" />
+        <FIELD NAME="introformat" TYPE="int" LENGTH="4" NOTNULL="true" DEFAULT="0" />
+        <FIELD NAME="targetcourseid" TYPE="int" LENGTH="10" NOTNULL="true" />
+        <FIELD NAME="categoryid" TYPE="int" LENGTH="10" NOTNULL="true" />
+        <FIELD NAME="receptioncourseid" TYPE="int" LENGTH="10" NOTNULL="true" />
+        <FIELD NAME="enabled" TYPE="int" LENGTH="1" NOTNULL="true" DEFAULT="0" />
+        <FIELD NAME="autoenrol" TYPE="int" LENGTH="1" NOTNULL="true" DEFAULT="0" />
+        <FIELD NAME="opendate" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" />
+        <FIELD NAME="closedate" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" />
+        <FIELD NAME="usermodified" TYPE="int" LENGTH="10" NOTNULL="true" />
+        <FIELD NAME="timecreated" TYPE="int" LENGTH="10" NOTNULL="true" />
+        <FIELD NAME="timemodified" TYPE="int" LENGTH="10" NOTNULL="true" />
+      </FIELDS>
+      <KEYS>
+        <KEY NAME="primary" TYPE="primary" FIELDS="id" />
+      </KEYS>
+      <INDEXES>
+        <INDEX NAME="course" UNIQUE="false" FIELDS="course" />
+        <INDEX NAME="categoryid" UNIQUE="false" FIELDS="categoryid" />
+      </INDEXES>
+    </TABLE>
+    <TABLE NAME="lumen10admissao_req" COMMENT="Applications preceding Moodle account creation">
+      <FIELDS>
+        <FIELD NAME="id" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="true" />
+        <FIELD NAME="admissaoid" TYPE="int" LENGTH="10" NOTNULL="true" />
+        <FIELD NAME="protocol" TYPE="char" LENGTH="40" NOTNULL="true" />
+        <FIELD NAME="activekey" TYPE="char" LENGTH="64" NOTNULL="false" />
+        <FIELD NAME="firstname" TYPE="char" LENGTH="100" NOTNULL="true" />
+        <FIELD NAME="lastname" TYPE="char" LENGTH="100" NOTNULL="true" />
+        <FIELD NAME="socialname" TYPE="char" LENGTH="100" NOTNULL="true" />
+        <FIELD NAME="mothername" TYPE="char" LENGTH="200" NOTNULL="true" />
+        <FIELD NAME="fathername" TYPE="char" LENGTH="200" NOTNULL="true" />
+        <FIELD NAME="email" TYPE="char" LENGTH="100" NOTNULL="true" />
+        <FIELD NAME="cpf" TYPE="char" LENGTH="11" NOTNULL="true" />
+        <FIELD NAME="phone" TYPE="char" LENGTH="20" NOTNULL="true" />
+        <FIELD NAME="visualimpairment" TYPE="int" LENGTH="1" NOTNULL="true" DEFAULT="0" />
+        <FIELD NAME="courseid" TYPE="int" LENGTH="10" NOTNULL="true" />
+        <FIELD NAME="categoryid" TYPE="int" LENGTH="10" NOTNULL="true" />
+        <FIELD NAME="receptioncourseid" TYPE="int" LENGTH="10" NOTNULL="true" />
+        <FIELD NAME="userid" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" />
+        <FIELD NAME="newaccount" TYPE="int" LENGTH="1" NOTNULL="true" DEFAULT="0" />
+        <FIELD NAME="status" TYPE="char" LENGTH="20" NOTNULL="true" DEFAULT="pending" />
+        <FIELD NAME="enrolstatus" TYPE="char" LENGTH="20" NOTNULL="true" DEFAULT="notrequested" />
+        <FIELD NAME="reviewerid" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" />
+        <FIELD NAME="reason" TYPE="text" NOTNULL="false" />
+        <FIELD NAME="confirmhash" TYPE="char" LENGTH="64" NOTNULL="false" />
+        <FIELD NAME="accessexpires" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" />
+        <FIELD NAME="confirmexpires" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" />
+        <FIELD NAME="accesshash" TYPE="char" LENGTH="64" NOTNULL="false" />
+        <FIELD NAME="timeverified" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" />
+        <FIELD NAME="consenttime" TYPE="int" LENGTH="10" NOTNULL="true" />
+        <FIELD NAME="timecreated" TYPE="int" LENGTH="10" NOTNULL="true" />
+        <FIELD NAME="timemodified" TYPE="int" LENGTH="10" NOTNULL="true" />
+        <FIELD NAME="enrolrequested" TYPE="int" LENGTH="1" NOTNULL="true" DEFAULT="0" />
+        <FIELD NAME="timecompleted" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" />
+      </FIELDS>
+      <KEYS>
+        <KEY NAME="primary" TYPE="primary" FIELDS="id" />
+      </KEYS>
+      <INDEXES>
+        <INDEX NAME="protocol" UNIQUE="true" FIELDS="protocol" />
+        <INDEX NAME="activekey" UNIQUE="true" FIELDS="activekey" />
+        <INDEX NAME="status" UNIQUE="false" FIELDS="status" />
+        <INDEX NAME="userid" UNIQUE="false" FIELDS="userid" />
+        <INDEX NAME="email" UNIQUE="false" FIELDS="email" />
+        <INDEX NAME="cpf" UNIQUE="false" FIELDS="cpf" />
+        <INDEX NAME="categoryid" UNIQUE="false" FIELDS="categoryid" />
+        <INDEX NAME="admissaoid" UNIQUE="false" FIELDS="admissaoid" />
+      </INDEXES>
+    </TABLE>
+    <TABLE NAME="lumen10admissao_reg" COMMENT="Never-reused institutional numbers; anonymous tombstones retained after erasure">
+      <FIELDS>
+        <FIELD NAME="id" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="true" />
+        <FIELD NAME="number" TYPE="char" LENGTH="13" NOTNULL="true" />
+        <FIELD NAME="userid" TYPE="int" LENGTH="10" NOTNULL="false" />
+        <FIELD NAME="credentialsent" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" />
+        <FIELD NAME="timecreated" TYPE="int" LENGTH="10" NOTNULL="true" />
+      </FIELDS>
+      <KEYS>
+        <KEY NAME="primary" TYPE="primary" FIELDS="id" />
+      </KEYS>
+      <INDEXES>
+        <INDEX NAME="number" UNIQUE="true" FIELDS="number" />
+        <INDEX NAME="userid" UNIQUE="true" FIELDS="userid" />
+      </INDEXES>
+    </TABLE>
+    <TABLE NAME="lumen10admissao_log" COMMENT="Application audit trail">
+      <FIELDS>
+        <FIELD NAME="id" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="true" />
+        <FIELD NAME="requestid" TYPE="int" LENGTH="10" NOTNULL="true" />
+        <FIELD NAME="actorid" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" />
+        <FIELD NAME="action" TYPE="char" LENGTH="30" NOTNULL="true" />
+        <FIELD NAME="note" TYPE="text" NOTNULL="false" />
+        <FIELD NAME="timecreated" TYPE="int" LENGTH="10" NOTNULL="true" />
+      </FIELDS>
+      <KEYS>
+        <KEY NAME="primary" TYPE="primary" FIELDS="id" />
+      </KEYS>
+      <INDEXES>
+        <INDEX NAME="requestid" UNIQUE="false" FIELDS="requestid" />
+        <INDEX NAME="actorid" UNIQUE="false" FIELDS="actorid" />
+      </INDEXES>
+    </TABLE>
+    <TABLE NAME="lumen10admissao_mail" COMMENT="Retryable notifications; contains no passwords or tokens">
+      <FIELDS>
+        <FIELD NAME="id" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="true" />
+        <FIELD NAME="requestid" TYPE="int" LENGTH="10" NOTNULL="true" />
+        <FIELD NAME="kind" TYPE="char" LENGTH="20" NOTNULL="true" />
+        <FIELD NAME="attempts" TYPE="int" LENGTH="5" NOTNULL="true" DEFAULT="0" />
+        <FIELD NAME="nextattempt" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" />
+        <FIELD NAME="timesent" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" />
+        <FIELD NAME="errorcode" TYPE="char" LENGTH="40" NOTNULL="false" />
+        <FIELD NAME="timecreated" TYPE="int" LENGTH="10" NOTNULL="true" />
+      </FIELDS>
+      <KEYS>
+        <KEY NAME="primary" TYPE="primary" FIELDS="id" />
+      </KEYS>
+      <INDEXES>
+        <INDEX NAME="requestid" UNIQUE="false" FIELDS="requestid" />
+        <INDEX NAME="queue" UNIQUE="false" FIELDS="timesent,nextattempt" />
+      </INDEXES>
+    </TABLE>
+    <TABLE NAME="lumen10admissao_rate" COMMENT="Short-lived pseudonymous submission limits">
+      <FIELDS>
+        <FIELD NAME="id" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="true" />
+        <FIELD NAME="ratekey" TYPE="char" LENGTH="64" NOTNULL="true" />
+        <FIELD NAME="hits" TYPE="int" LENGTH="5" NOTNULL="true" DEFAULT="0" />
+        <FIELD NAME="windowstart" TYPE="int" LENGTH="10" NOTNULL="true" />
+      </FIELDS>
+      <KEYS>
+        <KEY NAME="primary" TYPE="primary" FIELDS="id" />
+      </KEYS>
+      <INDEXES>
+        <INDEX NAME="ratekey" UNIQUE="true" FIELDS="ratekey" />
+      </INDEXES>
+    </TABLE>
+    <TABLE NAME="lumen10admissao_decl" COMMENT="Immutable enrollment declaration and verification record">
+      <FIELDS>
+        <FIELD NAME="id" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="true" />
+        <FIELD NAME="requestid" TYPE="int" LENGTH="10" NOTNULL="true" />
+        <FIELD NAME="code" TYPE="char" LENGTH="32" NOTNULL="true" />
+        <FIELD NAME="studentname" TYPE="char" LENGTH="255" NOTNULL="true" />
+        <FIELD NAME="registration" TYPE="char" LENGTH="13" NOTNULL="true" />
+        <FIELD NAME="institution" TYPE="char" LENGTH="255" NOTNULL="true" />
+        <FIELD NAME="classname" TYPE="char" LENGTH="255" NOTNULL="true" />
+        <FIELD NAME="sha256" TYPE="char" LENGTH="64" NOTNULL="false" />
+        <FIELD NAME="signaturetype" TYPE="char" LENGTH="20" NOTNULL="true" DEFAULT="none" />
+        <FIELD NAME="timecreated" TYPE="int" LENGTH="10" NOTNULL="true" />
+      </FIELDS>
+      <KEYS>
+        <KEY NAME="primary" TYPE="primary" FIELDS="id" />
+      </KEYS>
+      <INDEXES>
+        <INDEX NAME="requestid" UNIQUE="true" FIELDS="requestid" />
+        <INDEX NAME="code" UNIQUE="true" FIELDS="code" />
+      </INDEXES>
+    </TABLE>
+  </TABLES>
+</XMLDB>
