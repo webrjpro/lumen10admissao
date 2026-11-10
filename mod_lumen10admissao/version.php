@@ -21,8 +21,8 @@
  */
 defined('MOODLE_INTERNAL') || die();
 $plugin->component = 'mod_lumen10admissao';
-$plugin->version = 2026110900;
+$plugin->version = 2026110901;
 $plugin->requires = 2024100700;
 $plugin->supported = [501, 502];
 $plugin->maturity = MATURITY_STABLE;
-$plugin->release = '1.3.0';
+$plugin->release = '1.3.1';

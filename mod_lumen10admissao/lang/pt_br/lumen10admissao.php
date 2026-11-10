@@ -481,3 +481,4 @@ As aulas do curso solicitado aguardam a liberação da instituição.
 ';
 $string['confirmcontinue'] = 'Confirmar e continuar';
 $string['signin'] = 'Entrar na plataforma';
+$string['noactivities'] = 'Não há atividades de admissão disponíveis neste curso.';

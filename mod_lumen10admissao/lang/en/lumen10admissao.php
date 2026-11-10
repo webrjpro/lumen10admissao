@@ -481,3 +481,4 @@ Teaching course access is awaiting institutional authorisation.
 ';
 $string['confirmcontinue'] = 'Confirm and continue';
 $string['signin'] = 'Sign in to the platform';
+$string['noactivities'] = 'No admission activities are available in this course.';

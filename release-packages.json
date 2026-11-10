@@ -9,5 +9,28 @@
     "files": 65,
     "required_auxiliary_plugins": [],
     "optional_integration": "local_lumen10_prontuario"
+  },
+  {
+    "component": "mod_lumen10admissao",
+    "release": "1.3.1",
+    "version": 2026110901,
+    "file": "mod_lumen10admissao-1.3.1.zip",
+    "sha256": "31626c1e3355ae548060e54f3b95e0eebf58ca2a4d36d7704008584c297710a0",
+    "bytes": 159112,
+    "files": 68,
+    "required_auxiliary_plugins": [],
+    "optional_integration": "local_lumen10_prontuario",
+    "required_files_verified": [
+      "index.php",
+      "view.php",
+      "lib.php",
+      "mod_form.php",
+      "version.php",
+      "db/install.xml",
+      "db/access.php",
+      "lang/en/lumen10admissao.php",
+      "pix/icon.svg",
+      "templates/index.mustache"
+    ]
   }
 ]

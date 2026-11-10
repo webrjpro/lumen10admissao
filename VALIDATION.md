@@ -1,23 +1,19 @@
-# Validation — 9 November 2026
+# Validação — Lumen10 Admissão 1.3.1
 
-| Environment / check | Result |
+| Verificação | Resultado |
 | --- | --- |
-| Moodle 5.1.8, PHP 8.2.35, MariaDB 11.4.13 | 76 PHPUnit tests / 689 assertions passed |
-| Moodle 5.2.4+, PHP 8.3.36, MariaDB 11.4.13 | 76 PHPUnit tests / 689 assertions passed |
-| Browser workflow without other Lumen10 components | 37 checks passed; no JavaScript runtime errors |
-| Independent native installation/upgrade | Only mod_lumen10admissao 2026110900 among Lumen10 components |
-| PHP syntax / language parity / source maps | 48 PHP files, 417 keys in each language, 1 AMD module; passed |
-| Standard Grunt AMD build | Passed with zero allowed lint warnings |
-| ZIP and signed manifest | CRC, exact file bytes, SHA-256 and Ed25519 verified |
+| Moodle 5.1.8 / PHP 8.2.35 / MariaDB 11.4.13 | 78 testes / 694 verificações; aprovados |
+| Moodle 5.2.4+ / PHP 8.3.36 / MariaDB 11.4.13 | 78 testes / 694 verificações; aprovados |
+| Navegador sem outros componentes Lumen10 | 40 checagens; aprovadas, sem erros JavaScript |
+| Integridade no ambiente isolado atualizado | Versão 2026110901, assinatura e arquivos conferidos |
+| Sintaxe e idiomas | 50 arquivos PHP / 418 chaves em cada idioma / 1 módulo AMD |
+| ZIP nativo | Pasta única lumen10admissao; index.php e demais arquivos exigidos presentes; CRC e fontes conferidos |
+| Manifesto Ed25519 | Assinatura, lista de arquivos e hashes SHA-256 conferidos |
 
-The same 76 tests ran on both branches; they are not 152 distinct test cases. All fixture users/data were synthetic. Browser tests used disabled external email; PHPUnit captured email without external delivery. No external voice or AI request was required or made by the admission workflow checks.
+Os mesmos 78 casos foram executados nas duas versões. Dados de teste são sintéticos e e-mails externos ficaram desabilitados nos ambientes de teste. A listagem de atividades foi conferida no navegador; testes nativos verificam curso, visibilidade e capacidade.
 
-Browser checks cover English forms, conditional visual impairment reports, five widths from 320 to 1366 pixels, CPF rejection/formatting, pending applications without accounts, private documents, staff review, dialog naming/focus, approval, one-use POST confirmation, independent account/reception enrolment, private declaration PDF, live public verification without CPF/email/medical reports, local SHA-256 matching/mismatch and rejected token replay. Identical scan filenames in separate fields were accepted with native upload checks retained.
+O navegador também verificou formulário, CPF, laudo condicional, cinco larguras de tela, documentos privados, aprovação, confirmação por POST, conta/matrícula sem Prontuário, PDF, consulta pública sem CPF/e-mail/laudo, hash local e link de uso único.
 
-Native tests cover identity, authorisation, enrolment, password generation/delivery, consent, controlled CAPTCHA cases, interrupted uploads, application periods, private reports, privacy export/erasure, retention, backup/restore, real metadata fields, standard view events and public admission without course catalogue browsing permission.
+Limites: banco executado MariaDB; não se afirma teste em PostgreSQL, carga, certificação independente de segurança/acessibilidade ou aprovação do Marketplace. Os dados de produção e a publicação são verificados separadamente no comprovante de entrega.
 
-Limits: MariaDB was exercised; this report does not claim PostgreSQL execution, load testing, universal accessibility compliance, independent security certification or Marketplace approval. No production update was performed in this admissions delivery.
-
-## Package
-
-`mod_lumen10admissao-1.3.0.zip` — SHA-256 `0328c7bed20242d69abd3db4699e83764afa2262139ca22ae0dc077ebe974946`.
+SHA-256 do ZIP: `31626c1e3355ae548060e54f3b95e0eebf58ca2a4d36d7704008584c297710a0`.

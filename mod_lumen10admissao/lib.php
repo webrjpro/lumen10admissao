@@ -109,3 +109,25 @@ function lumen10admissao_view(stdClass $activity, stdClass $course, stdClass $cm
     $event->add_record_snapshot('lumen10admissao', $activity);
     $event->trigger();
 }
+
+/**
+ * List only activity links available to the current user in the requested course.
+ *
+ * @param stdClass $course Course record; the caller must require course login.
+ * @return array Formatted activity names and URLs, without application data.
+ */
+function lumen10admissao_get_course_index(stdClass $course): array {
+    $links = [];
+    foreach (get_fast_modinfo($course)->get_instances_of('lumen10admissao') as $cm) {
+        $context = context_module::instance($cm->id);
+        if (!$cm->uservisible || !has_capability('mod/lumen10admissao:view', $context)) {
+            continue;
+        }
+        $links[] = [
+            'name' => format_string($cm->name, true, ['context' => $context]),
+            'url' => (new moodle_url('/mod/lumen10admissao/view.php', ['id' => $cm->id]))->out(false),
+            'hidden' => !$cm->visible,
+        ];
+    }
+    return $links;
+}

@@ -2,9 +2,9 @@
 
 **Produto:** Lumen10 Inscrições e Admissão.
 **Componente:** `mod_lumen10admissao`.
-**Release:** 1.3.0; versão Moodle 2026110900.
+**Release:** 1.3.1; versão Moodle 2026110901.
 **Titular indicado no projeto:** Carlos Antonio de Oliveira Piquet.
-**Emissão técnica UTC:** 2026-11-10T01:03:18+00:00.
+**Emissão técnica UTC:** 2026-11-10T02:09:24+00:00.
 **Licença do código:** GPL v3 ou posterior.
 
 O manifesto deste pacote foi assinado com uma chave técnica Ed25519. A chave pública incorporada no componente permite verificar a assinatura e o SHA-256 de cada arquivo da versão entregue. O certificado JSON é excluído do próprio manifesto para evitar referência circular; todos os demais arquivos do diretório são conferidos, incluindo esta declaração e a licença.

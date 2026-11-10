@@ -2,7 +2,7 @@
 
 **Public applications, controlled admission and verifiable enrolment declarations for Moodle.**
 
-Component: `mod_lumen10admissao` · Release **1.3.0** · Build **2026110900** · GNU GPL v3 or later.
+Component: `mod_lumen10admissao` · Release **1.3.1** · Build **2026110901** · GNU GPL v3 or later.
 
 [Português brasileiro](README_pt-BR.md) · [Source](https://github.com/webrjpro/lumen10admissao) · [Issues](https://github.com/webrjpro/lumen10admissao/issues) · [Downloads](https://github.com/webrjpro/lumen10admissao/tree/main/dist)
 
@@ -29,7 +29,7 @@ Each activity belongs to one reception course and category. An institution can r
 
 ## Dependencies and optional integrations
 
-**This is a single independently installable activity. No auxiliary Lumen10 plugin is required. Submit only `mod_lumen10admissao-1.3.0.zip` for this component.**
+**This is a single independently installable activity. No auxiliary Lumen10 plugin is required. Submit only `mod_lumen10admissao-1.3.1.zip` for this component.**
 
 The optional **Lumen10 Student Record (`local_lumen10_prontuario`)** integration provides a richer reception record and archival hand-off when that plugin is installed. Without it, the student is directed to the native reception course and admission still works. CPF consistency checks consult compatible record/archive tables only when those tables exist.
 

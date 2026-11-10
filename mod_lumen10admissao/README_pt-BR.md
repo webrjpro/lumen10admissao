@@ -2,13 +2,13 @@
 
 **Inscrição pública, análise pela Secretaria, confirmação segura e declaração de matrícula verificável.**
 
-Componente `mod_lumen10admissao` · Versão **1.3.0 / 2026110900** · Moodle **5.1 e 5.2** · GPL v3 ou posterior.
+Componente `mod_lumen10admissao` · Versão **1.3.1 / 2026110901** · Moodle **5.1 e 5.2** · GPL v3 ou posterior.
 
 [Documentação completa em inglês](README.md) · [Código e versões](https://github.com/webrjpro/lumen10admissao) · [Suporte](https://github.com/webrjpro/lumen10admissao/issues)
 
 ## Um único plugin para instalar e enviar
 
-Envie **somente `mod_lumen10admissao-1.3.0.zip`** no cadastro deste componente no Marketplace. Não há plugin auxiliar obrigatório. Este pacote funciona sem Prova, regra de acesso do Quiz, Guardian IA, Prontuário, Arquivados ou Carteira Acadêmica.
+Envie **somente `mod_lumen10admissao-1.3.1.zip`** no cadastro deste componente no Marketplace. Não há plugin auxiliar obrigatório. Este pacote funciona sem Prova, regra de acesso do Quiz, Guardian IA, Prontuário, Arquivados ou Carteira Acadêmica.
 
 O **Lumen10 Prontuário (`local_lumen10_prontuario`) é uma integração opcional**: quando instalado, acrescenta a ficha e o encaminhamento ao arquivo institucional. Sem ele, o aluno acessa o curso nativo da Secretaria e o fluxo de admissão continua funcionando. A consulta de CPF em tabelas de prontuários/arquivos só ocorre se essas tabelas existirem. O ZIP não inclui esses produtos separados.
 

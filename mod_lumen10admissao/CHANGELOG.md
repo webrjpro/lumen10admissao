@@ -1,5 +1,12 @@
 # Changelog
 
+## 1.3.1 — 2026-11-09 (2026110901)
+
+- Add the required activity index.php course listing with login, course context and native visibility/capability checks.
+- Add a Mustache list and a translated empty state. No applicant identity or document data is listed.
+- Check the required activity files inside the final ZIP before publication.
+
+
 ## 1.3.0 — 2026-11-09 (2026110900)
 
 - Replace the English-to-Portuguese fallback with a complete English language pack; localise forms, pages, settings, notifications and PDF labels.
